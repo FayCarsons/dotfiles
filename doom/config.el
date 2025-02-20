@@ -117,3 +117,8 @@
 
 (after! yasnippet
   (setq yas-triggers-in-field t))
+
+(setq shell-file-name (executable-find "zsh"))
+(setq fish-path "/usr/local/bin/fish")
+(setq-default vterm-shell fish-path)
+(setq-default explicit-shell-file-name fish-path)
