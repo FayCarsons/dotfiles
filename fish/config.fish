@@ -16,16 +16,14 @@ set PATH (string match -v '/usr/local/neovim/bin' $PATH)
 fish_add_path -a /usr/local/nvim-macos-arm64/bin
 fish_add_path -a ~/.cargo/bin
 fish_add_path -a ~/.ghcup/bin
+fish_add_path -a ~/.cabal/bin
 fish_add_path -a ~/.config/doom/bin
 fish_add_path -a ~/.config/emacs/bin
+fish_add_path /nix/var/nix/profiles/default/bin
+fish_add_path ~/.nix-profile/bin
+fish_add_path /run/current-system/sw/bin
+
+set -x SOPS_AGE_KEY_FILE ~/.config/sops/age/keys.txt
+set -x CACHIX_KEY eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2ZDdjMzk2Ni0wY2FlLTRmNDMtOTQyMS01NzZiMzAzNzE2MDciLCJzY29wZXMiOiJjYWNoZSJ9.ikE4t9-OnBGHin4b60qhz1eCK56dk6YVHw0MuUsuYQc
 
 eval (/opt/homebrew/bin/brew shellenv)
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-test -r '/Users/faycarsons/.opam/opam-init/init.fish' && source '/Users/faycarsons/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
-# END opam configuration
